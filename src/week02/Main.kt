@@ -38,6 +38,10 @@ fun main() {
         }
     }
 
+    // ==============================
+    // SISTEM DENDA PERPUSTAKAAN
+    // ==============================
+
     println("\n--- SISTEM DENDA PERPUSTAKAAN ---")
 
     print("Masukkan Judul Buku: ")
@@ -52,4 +56,65 @@ fun main() {
 
     println("Buku: ${loan.bookTitle}")
     println("Total Denda: Rp $totalFine")
+
+    // ==============================
+    // MINI RPG BATTLE SYSTEM
+    // ==============================
+
+    println("\n--- MINI RPG BATTLE ---")
+
+    print("Masukkan Nama Hero: ")
+    val heroName = scanner.nextLine()
+
+    print("Masukkan Base Damage Hero: ")
+    val heroDamage = scanner.nextInt()
+    scanner.nextLine()
+
+    val hero = Hero(heroName, heroDamage)
+
+    var enemyHp = 100
+
+    while (hero.isAlive() && enemyHp > 0) {
+
+        println("\nPilih Aksi:")
+        println("1. Serang")
+        println("2. Kabur")
+        print("Pilihan: ")
+
+        val choice = scanner.nextInt()
+        scanner.nextLine()
+
+        if (choice == 1) {
+            hero.attack("Enemy")
+
+            enemyHp -= hero.baseDamage
+            if (enemyHp < 0) enemyHp = 0
+
+            println("HP Enemy sekarang: $enemyHp")
+
+            if (enemyHp > 0) {
+                val enemyDamage = (10..20).random()
+                println("Enemy membalas!")
+                hero.takeDamage(enemyDamage)
+            }
+
+        } else if (choice == 2) {
+            println("Hero kabur dari pertarungan!")
+            break
+        } else {
+            println("Pilihan tidak valid.")
+        }
+    }
+
+    println("\n=== HASIL PERTARUNGAN ===")
+
+    if (hero.isAlive() && enemyHp == 0) {
+        println("${hero.name} MENANG!")
+    }
+    else if (!hero.isAlive()) {
+        println("${hero.name} KALAH...")
+    }
+    else {
+        println("Pertarungan berakhir tanpa pemenang.")
+    }
 }
