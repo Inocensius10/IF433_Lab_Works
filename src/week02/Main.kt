@@ -37,4 +37,19 @@ fun main() {
             println("Pilihan ngawur, pendaftaran batal!")
         }
     }
+
+    println("\n--- SISTEM DENDA PERPUSTAKAAN ---")
+
+    print("Masukkan Judul Buku: ")
+    val bookTitle = scanner.nextLine()
+
+    print("Masukkan Jumlah Hari Terlambat: ")
+    val daysLate = scanner.nextInt()
+    scanner.nextLine()
+
+    val loan = LibraryLoan(bookTitle, daysLate)
+    val totalFine = loan.calculateFine()
+
+    println("Buku: ${loan.bookTitle}")
+    println("Total Denda: Rp $totalFine")
 }
