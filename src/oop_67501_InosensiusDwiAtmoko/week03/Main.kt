@@ -22,4 +22,16 @@ fun main() {
     sword.damage = 9999
     println("Damage sekarang: ${sword.damage}")
     println("Tier: ${sword.tier}")
+
+    println("\n--- TEST PLAYER ---")
+
+    val player = Player("Ino")
+
+// player.xp = 1000  // harus error kalau dicoba
+
+    player.addXp(50)
+    println("Level sekarang: ${player.level}")
+
+    player.addXp(60)
+    println("Level sekarang: ${player.level}")
 }
