@@ -1,4 +1,15 @@
 package oop_67501_InosensiusDwiAtmoko.week04
 
-class Employee {
+open class Employee(
+    val name: String,
+    val baseSalary: Int
+) {
+
+    open fun work() {
+        println("$name sedang bekerja.")
+    }
+
+    open fun calculateBonus(): Int {
+        return (baseSalary * 10) / 100
+    }
 }
