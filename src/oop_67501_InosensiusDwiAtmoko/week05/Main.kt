@@ -55,4 +55,21 @@ fun main() {
         payment.processPayment(75000.0)
 
     }
+
+    for (payment in metodePembayaran) {
+
+        payment.processPayment(75000.0)
+
+        if (payment is EWallet) {
+
+            println("Saldo tidak cukup, melakukan top up otomatis...")
+            payment.topUp(50000.0)
+
+            println("Mencoba transaksi kembali...")
+            payment.processPayment(75000.0)
+        }
+
+        println("----------------------")
+
+    }
 }
