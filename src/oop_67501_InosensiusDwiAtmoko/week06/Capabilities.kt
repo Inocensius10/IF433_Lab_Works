@@ -1,4 +1,15 @@
 package oop_67501_InosensiusDwiAtmoko.week06
 
-class Capabilities {
+// Interface = Can-Do (Behavior)
+
+interface BluetoothConnectable {
+
+    fun connectToBluetooth()
+
+}
+
+interface Rechargeable {
+
+    fun chargeBattery()
+
 }
