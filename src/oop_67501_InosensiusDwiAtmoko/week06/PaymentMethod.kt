@@ -1,4 +1,7 @@
 package oop_67501_InosensiusDwiAtmoko.week06
 
-class PaymentMethod {
+interface PaymentMethod {
+
+    fun pay(amount: Double)
+
 }
