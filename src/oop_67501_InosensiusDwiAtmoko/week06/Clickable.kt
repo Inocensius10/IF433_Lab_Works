@@ -1,4 +1,8 @@
 package oop_67501_InosensiusDwiAtmoko.week06
 
-class Clickable {
+interface Clickable {
+
+    val name: String   // abstract property (tidak ada nilai default)
+
+    fun click()
 }
