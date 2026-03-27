@@ -39,6 +39,10 @@ fun main() {
     }
 
     println(uiMessage)
+
+    println("\n=== GAME START ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
 
 
