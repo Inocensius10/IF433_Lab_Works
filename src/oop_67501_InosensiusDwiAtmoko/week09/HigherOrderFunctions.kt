@@ -21,5 +21,10 @@ fun main() {
 
     sortedReverse.forEach { name ->
         println("User: $name")
+
+        val multiplied = evens.map { it * 10 }
+        val asStrings = multiplied.map { "Rp ${it}k" }
+        println("Multiplied: $multiplied")
+        println("Formatted: $asStrings")
     }
 }
