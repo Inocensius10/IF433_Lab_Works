@@ -15,4 +15,10 @@ fun main() {
     printData(3.14)
     val result = processData("Stable Coin")
     println("Hasil proses: $result")
+
+    println("\n=== TEST TYPE CONSTRAINTS ===")
+    val mathBox = MathBox(10, 20.5)
+    println("Hasil penjumlahan: ${mathBox.sum()}")
+    println("Nilai terbesar: ${maxOfTwo(15, 30)}")
+    println("Teks terbesar: ${maxOfTwo("BTC", "ETH")}")
 }
