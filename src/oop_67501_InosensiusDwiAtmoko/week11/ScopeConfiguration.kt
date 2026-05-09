@@ -20,4 +20,13 @@ fun main() {
     with(user) {
         println("User Detail -> Nama: $name, Umur: $age")
     }
+
+    println("\n=== TEST APPLY + ALSO ===")
+    val newUser = User().apply {
+        name = "Nina"
+        age = 30
+    }.also {
+        println("User siap dipakai: $it")
+    }
+    println(newUser)
 }
