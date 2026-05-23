@@ -73,8 +73,13 @@ fun main() {
         TradeRecord(3, "SOLUSDT", "Long", 500.0, 90.0)
     )
 
+    val loadedData = loadTrades("crypto_trades.csv")
+
+    val totalPnl = loadedData.sumOf { it.pnl }
+
     saveTrades(trades, "crypto_trades.csv")
 
     File("crypto_trades.csv")
         .appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
 }
+
